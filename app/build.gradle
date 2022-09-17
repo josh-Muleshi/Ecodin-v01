@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -59,4 +62,24 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.2'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.3"
+
+    implementation "com.google.dagger:hilt-android:2.42"
+    kapt "com.google.dagger:hilt-compiler:2.42"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+    implementation "com.google.accompanist:accompanist-permissions:0.24.0-alpha"
+    implementation "com.google.accompanist:accompanist-insets:0.24.0-alpha"
+
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    implementation "com.github.skydoves:landscapist-glide:1.5.0"
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.23.1"
 }
