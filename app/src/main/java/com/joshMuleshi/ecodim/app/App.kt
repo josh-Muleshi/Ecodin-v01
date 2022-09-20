@@ -1,4 +1,4 @@
-package com.example.pub_resultat.app
+package com.joshMuleshi.ecodim.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
