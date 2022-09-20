@@ -71,7 +71,7 @@ fun AuthScreen(navController: NavHostController, viewModel: AuthViewModel = hilt
 
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter){
         Image(
-            painter = painterResource(id = R.drawable.bible),
+            painter = painterResource(id = R.drawable.praying),
             contentDescription = "",
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
