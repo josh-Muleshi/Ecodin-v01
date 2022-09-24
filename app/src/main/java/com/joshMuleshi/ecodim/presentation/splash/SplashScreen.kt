@@ -8,18 +8,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.fontResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.joshMuleshi.ecodim.R
 import com.joshMuleshi.ecodim.app.navigation.Screen
 import com.joshMuleshi.ecodim.presentation.splash.business.SplashState
 import com.joshMuleshi.ecodim.presentation.splash.business.SplashViewModel
-import com.joshMuleshi.ecodim.ui.theme.Back1
-import com.joshMuleshi.ecodim.ui.theme.Back2
-import com.joshMuleshi.ecodim.ui.theme.Back3
+import com.joshMuleshi.ecodim.ui.theme.*
 import kotlinx.coroutines.delay
 
 @Composable
@@ -62,24 +66,29 @@ fun SplashScreen(navController: NavHostController, splashViewModel: SplashViewMo
     ) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
             Text(
-                text = "PUB-Resultat",
+                text = stringResource(R.string.app_name),
                 style = MaterialTheme.typography.h1.copy(
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Medium,
+                    fontFamily = FugazOne,
                     textAlign = TextAlign.Center,
                     color = Color.White
                 )
             )
 
             Text(
-                text = "Consulter votre resultat",
+                text = stringResource(R.string.verse),
                 style = MaterialTheme.typography.body2.copy(
-                    fontSize = 16.sp,
+                    fontSize = 17.sp,
                     fontWeight = FontWeight.Normal,
+                    fontStyle = FontStyle.Italic,
+                    fontFamily = Quicksand,
                     textAlign = TextAlign.Center,
                     color = Color.White
                 ),
-                modifier = Modifier.padding(16.dp).align(Alignment.BottomCenter)
+                modifier = Modifier
+                    .padding(16.dp)
+                    .align(Alignment.BottomCenter)
             )
         }
     }

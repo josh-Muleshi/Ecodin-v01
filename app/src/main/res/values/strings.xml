@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ecodim</string>
+    <string name="verse">Instruis l\'enfant selon la voie qu\'il dois suivre. Et quand il sera vieux, il ne s\'en détournera pas.</string>
+    <string name="description">Connectez-vous</string>
 </resources>

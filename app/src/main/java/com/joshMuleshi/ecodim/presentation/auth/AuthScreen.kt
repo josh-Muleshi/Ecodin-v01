@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -36,10 +37,7 @@ import com.joshMuleshi.ecodim.app.navigation.Screen
 import com.joshMuleshi.ecodim.presentation.auth.business.AuthState
 import com.joshMuleshi.ecodim.presentation.auth.business.AuthViewModel
 import com.joshMuleshi.ecodim.R
-import com.joshMuleshi.ecodim.ui.theme.Back3
-import com.joshMuleshi.ecodim.ui.theme.Back4
-import com.joshMuleshi.ecodim.ui.theme.Purple500
-import com.joshMuleshi.ecodim.ui.theme.Trans
+import com.joshMuleshi.ecodim.ui.theme.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -88,10 +86,11 @@ fun AuthScreen(navController: NavHostController, viewModel: AuthViewModel = hilt
             verticalArrangement = Arrangement.Bottom
         ) {
             Text(
-                text = "PUB-Resultat",
+                text = stringResource(R.string.app_name),
                 style = MaterialTheme.typography.h1.copy(
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Medium,
+                    fontFamily = FugazOne,
                     textAlign = TextAlign.Center,
                     color = White
                 )
@@ -100,7 +99,7 @@ fun AuthScreen(navController: NavHostController, viewModel: AuthViewModel = hilt
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = "Consulter votre resultat",
+                text = stringResource(R.string.description),
                 style = MaterialTheme.typography.body2.copy(
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Light,
