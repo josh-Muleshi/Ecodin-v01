@@ -3,6 +3,7 @@ package com.joshMuleshi.ecodim.presentation.auth
 import android.app.Activity
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,6 +18,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Blue
+import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -163,10 +165,9 @@ fun AuthScreen(navController: NavHostController, viewModel: AuthViewModel = hilt
                     .height(48.dp)
                     .padding(horizontal = 16.dp),
                 shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(3.dp, White),
+                colors = ButtonDefaults.outlinedButtonColors(backgroundColor = Trans),
                 contentPadding = PaddingValues(8.dp),
-                colors = ButtonDefaults.outlinedButtonColors(
-                    backgroundColor = Purple500
-                ),
                 content = {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -180,7 +181,7 @@ fun AuthScreen(navController: NavHostController, viewModel: AuthViewModel = hilt
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 textAlign = TextAlign.Center,
-                                color = Color.Black
+                                color = White
                             )
                         )
                         AnimatedVisibility(visible = state == AuthState.Loading) {
