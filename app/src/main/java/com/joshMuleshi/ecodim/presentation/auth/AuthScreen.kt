@@ -165,7 +165,7 @@ fun AuthScreen(navController: NavHostController, viewModel: AuthViewModel = hilt
                     .padding(horizontal = 16.dp),
                 shape = RoundedCornerShape(16.dp),
                 border = BorderStroke(3.dp, White),
-                colors = ButtonDefaults.outlinedButtonColors(backgroundColor = Trans),
+                colors = ButtonDefaults.outlinedButtonColors(backgroundColor = Purple700),
                 contentPadding = PaddingValues(8.dp),
                 content = {
                     Row(
