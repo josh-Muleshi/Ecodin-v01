@@ -16,9 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Blue
-import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -33,10 +31,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.joshMuleshi.ecodim.R
 import com.joshMuleshi.ecodim.app.navigation.Screen
 import com.joshMuleshi.ecodim.presentation.auth.business.AuthState
 import com.joshMuleshi.ecodim.presentation.auth.business.AuthViewModel
-import com.joshMuleshi.ecodim.R
 import com.joshMuleshi.ecodim.ui.theme.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -199,13 +197,7 @@ fun BottomShadow(modifier: Modifier = Modifier) {
     Box(modifier = modifier
         .fillMaxSize()
         .background(
-            brush = Brush.verticalGradient(
-                colors = listOf(
-                    Trans,
-                    Back4,
-                    Back3
-                )
-            )
+            brush = Brush.verticalGradient(colors = listOf(Trans, Back4, Back3))
         ), content = {}
     )
 }
