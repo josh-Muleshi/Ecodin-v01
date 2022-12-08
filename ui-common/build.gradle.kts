@@ -1,16 +1,20 @@
+import de.fayard.refreshVersions.core.versionFor
+
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
     namespace = "cd.wapupdotdev.ui_common"
-    compileSdk = 32
+    compileSdk = ConfigData.compileSdk
+    buildToolsVersion = ConfigData.buildToolsVersion
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
-
+        minSdk = ConfigData.minSdk
+        targetSdk = ConfigData.targetSdk
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -18,27 +22,54 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = versionFor(AndroidX.compose.compiler)
     }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+    api(project(":data"))
+    api(project(":util"))
+
+    api(Libs.core_ktx)
+    api(Libs.compose_compiler)
+    api(Libs.compose_ui_tooling)
+    api(Libs.compose_ui_tooling_preview)
+    api(Libs.compose_ui)
+    api(Libs.compose_ui_viewbinding)
+    api(Libs.compose_material)
+    api(Libs.compose_runtime_livedata)
+    api(Libs.compose_material_icons_extended)
+    api(Libs.compose_constraint_layout)
+
+    api(Libs.coil_compose)
+
+    api(Libs.accompanist_pager)
+    api(Libs.accompanist_pager_indicators)
+    api(Libs.accompanist_webview)
+    api(Libs.accompanist_placeholder)
+    api(Libs.accompanist_navigation_animation)
+    api(Libs.accompanist_flowlayout)
+
+    api(Libs.mavericks_compose)
+    testApi(Libs.mavericks_testing)
+    testApi(Libs.mavericks_mocking)
+
+    implementation(Libs.hilt_android)
+    kapt(Libs.hilt_android_compiler)
+
+    testApi("junit:junit:4.13.2")
+    androidTestApi("androidx.test.ext:junit:1.1.3")
+    androidTestApi("androidx.test.espresso:espresso-core:3.4.0")
 }

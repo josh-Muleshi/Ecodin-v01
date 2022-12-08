@@ -154,6 +154,6 @@ object Libs {
     const val kalendar_endlos = "com.himanshoe:kalendar-endlos:_"
 }
 
-object Versions {
+object Version {
     const val ksp = "1.7.20-1.0.6"
 }

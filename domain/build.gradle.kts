@@ -1,15 +1,19 @@
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    kotlin("kapt")
+    id("org.jetbrains.kotlin.plugin.parcelize")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
     namespace = "cd.wapupdotdev.domain"
-    compileSdk = 32
+    compileSdk = ConfigData.compileSdk
+    buildToolsVersion = ConfigData.buildToolsVersion
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = ConfigData.minSdk
+        targetSdk = ConfigData.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -28,17 +32,22 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+    api(project(":util"))
+    api(Libs.koin_core)
+
+    implementation(Libs.core_ktx)
+
+    testImplementation(Libs.junit_jupiter_api)
+    testImplementation(Libs.junit_jupiter_engine)
+
+    testImplementation(Libs.mockk_core)
+
+    implementation(Libs.hilt_android)
+    kapt(Libs.hilt_android_compiler)
+
+    implementation(Libs.timber)
 }

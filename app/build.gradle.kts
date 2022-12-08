@@ -86,6 +86,9 @@ android {
 
 dependencies {
 
+    implementation(project(":data"))
+    implementation(project(":ui-navigation"))
+
     implementation(Libs.core_ktx)
     implementation(Libs.compose_ui)
     implementation(Libs.compose_material)
