@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_connection_canceled">Connexion annulée</string>
+
+    <string name="app_name">Ecodim</string>
+    <string name="verse">Instruis l\'enfant selon la voie qu\'il dois suivre. Et quand il sera vieux, il ne s\'en détournera pas.</string>
+    <string name="description">Connectez-vous</string>
+
+    <string name="application_name">Ecodim</string>
+</resources>
