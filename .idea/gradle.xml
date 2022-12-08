@@ -12,7 +12,15 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/buildsrc" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/i18n" />
+            <option value="$PROJECT_DIR$/ui-auth" />
+            <option value="$PROJECT_DIR$/ui-common" />
+            <option value="$PROJECT_DIR$/ui-home" />
+            <option value="$PROJECT_DIR$/ui-navigation" />
+            <option value="$PROJECT_DIR$/ui-onboarding" />
+            <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
       </GradleProjectSettings>
