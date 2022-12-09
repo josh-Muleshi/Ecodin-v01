@@ -4,5 +4,5 @@ import kotlinx.coroutines.flow.Flow
 import cd.wapupdotdev.util.Result
 
 interface VerseRepository {
-    fun getVerse():Flow<Result<VerseRepository>>
+    fun findVerse():Flow<Result<VerseRepository>>
 }

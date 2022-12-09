@@ -4,5 +4,5 @@ import kotlinx.coroutines.flow.Flow
 import cd.wapupdotdev.util.Result
 
 interface SongRepository {
-    fun FindSong(): Flow<Result<SongRepository>>
+    fun findSong(): Flow<Result<SongRepository>>
 }
