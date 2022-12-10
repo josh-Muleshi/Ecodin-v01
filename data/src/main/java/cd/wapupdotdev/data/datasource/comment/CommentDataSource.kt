@@ -5,5 +5,6 @@ import kotlinx.coroutines.flow.Flow
 import cd.wapupdotdev.util.Result
 
 interface CommentDataSource {
-    fun getAllComment(): Flow<Result<List<Comment>>>
+    fun getAllComment(): Flow<Result<List<Comment?>>>
+    suspend fun addComment(comment: Comment)
 }

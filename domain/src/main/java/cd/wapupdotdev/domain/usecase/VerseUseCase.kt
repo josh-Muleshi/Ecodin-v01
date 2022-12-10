@@ -12,8 +12,8 @@ import javax.inject.Inject
 class FindVerseUseCase @Inject constructor(
     @IoDispatcher coroutineDispatcher: CoroutineDispatcher,
     val repository: VerseRepository
-): FlowUseCase<Unit, Verse>(coroutineDispatcher){
-    override fun execute(parameters: Unit): Flow<Result<Verse>> {
+): FlowUseCase<Unit, Verse?>(coroutineDispatcher){
+    override fun execute(parameters: Unit): Flow<Result<Verse?>> {
         return repository.findVerse()
     }
 }
