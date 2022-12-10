@@ -6,5 +6,5 @@ import cd.wapupdotdev.domain.entity.Post
 
 interface PostRepository {
     fun fetchAllPost(): Flow<Result<List<Post>>>
-    fun findPostByUid(uidGroup: String, uidStore: String, uidPost: String): Flow<Result<Post>>
+    fun findPostByUid(uidPost: String): Flow<Result<Post>>
 }

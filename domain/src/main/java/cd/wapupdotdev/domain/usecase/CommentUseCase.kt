@@ -13,8 +13,8 @@ import javax.inject.Inject
 class FetchAllCommentUseCase @Inject constructor(
     @IoDispatcher coroutineDispatcher: CoroutineDispatcher,
     private val commentRepository: CommentRepository
-): FlowUseCase<Unit, List<Comment>>(coroutineDispatcher){
-    override fun execute(parameters: Unit): Flow<Result<List<Comment>>> {
+): FlowUseCase<Unit, List<Comment?>>(coroutineDispatcher){
+    override fun execute(parameters: Unit): Flow<Result<List<Comment?>>> {
         return commentRepository.fetchAllComment()
     }
 }
