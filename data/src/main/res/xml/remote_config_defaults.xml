@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>help_center_url</key>
+        <value>https://be-served.com/</value>
+    </entry>
+    <entry>
+        <key>term_and_condition_url</key>
+        <value>https://be-served.com/terms-and-conditions/</value>
+    </entry>
+    <entry>
+        <key>privacy_policy_url</key>
+        <value>https://be-served.com/privacy-policy/</value>
+    </entry>
+    <entry>
+        <key>customer_service_phone_number</key>
+        <value>243975310526</value>
+    </entry>
+</defaultsMap>

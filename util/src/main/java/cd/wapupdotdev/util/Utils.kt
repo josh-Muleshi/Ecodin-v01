@@ -1,8 +1,40 @@
 package cd.wapupdotdev.util
 
+import com.google.firebase.FirebaseOptions
 import org.ocpsoft.prettytime.PrettyTime
 import java.util.*
 import kotlin.random.Random
+
+object Constant {
+    object Firebase {
+        const val TEST = "ecodim-test"
+        const val LIVE = "ecodim-live"
+
+        val TEST_CONFIG = FirebaseOptions.Builder()
+            .setApplicationId("")
+            .setProjectId("")
+            .setApiKey("")
+            .setApplicationId("")
+            .setDatabaseUrl("")
+            .build()
+
+        val LIVE_CONFIG = FirebaseOptions.Builder()
+            .setApplicationId("")
+            .setProjectId("")
+            .setApiKey("")
+            .setApplicationId("")
+            .setDatabaseUrl("")
+            .build()
+    }
+
+    val isDebug: Boolean
+        get() = BuildConfig.DEBUG
+
+    object DefaultWebClientID {
+        val DEBUG = ""//R.string.default_web_client_id_debug
+        val RELEASE = ""//R.string.default_web_client_id_release
+    }
+}
 
 object DateUtil {
     fun formatToMediumDate(date: Date?): String {
